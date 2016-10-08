@@ -1,0 +1,126 @@
+$icon-font-path: '../fonts/';
+
+$title-black: rgb(18, 12, 15);
+$title-grey: rgb(136,137,137);
+$title-red: rgb(230,41,42);
+
+@import 'https://fonts.googleapis.com/css?family=Oswald|Great+Vibes';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@mixin title {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  font-size:5em;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.1em;
+}
+
+@mixin subtitle {
+  font-size:3.8em;
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+}
+
+.splash {
+  .first {
+    @include title;
+    color: $title-black;
+  }
+
+  .second {
+    @include title;
+    color: $title-grey;
+    font-size: 5.5em;
+  }
+
+  .third {
+    @include title;
+    color: $title-red;
+    font-size:6em;
+  }
+
+  .fourth {
+    @include title;
+    color: $title-black;
+    font-size:4em;
+  }
+
+  .heart-wrapper {
+    padding-top:1em;
+  }
+
+  .glyphicon-heart {
+    font-size: 4.5em;
+    color:$title-red;
+    text-align: center;
+    width: 100%;  
+  }
+
+  .glyphicon-heart::after{
+      position: absolute;
+      top: 40%;
+      height: 2px;
+      background: #888989;
+      content: "";
+      width: 100%;
+      display: block;
+      z-index: -1000;
+  }
+
+  .glyphicon-heart::before {
+    background: white;
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+
+  .subtitle {
+    @include subtitle;
+    color:$title-grey;
+  }
+
+  .subtitle-date {
+    @include title;
+    font-size: 3.5em;
+    color:$title-grey; 
+  }
+
+  .glyphicon-chevron-down {
+    font-size: 4em;
+    color: $title-red;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+  }
+}
+
+
+/* Details Section */
+.title-details {
+  @include title;
+}
+
+.details {
+  .title {
+    @include title;
+  }
+
+  .subtitle {
+    @include title;
+    font-size: 3em;
+    text-align: left;
+  }
+
+  .content {
+    @include title;
+    color:$title-grey;
+    font-size:2em;
+    font-weight: normal;
+    text-align: left;
+  }
+}
