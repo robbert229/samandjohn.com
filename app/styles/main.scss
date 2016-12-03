@@ -4,26 +4,48 @@ $title-black: rgb(18, 12, 15);
 $title-grey: rgb(136,137,137);
 $title-red: rgb(230,41,42);
 
+$transition-1: 768px;
+
 @import 'https://fonts.googleapis.com/css?family=Oswald|Great+Vibes';
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+
 @mixin title {
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
-  font-size:5em;
+  font-size:4em;
   font-family: 'Oswald', sans-serif;
   letter-spacing: 0.1em;
+
+  @media screen and (max-width: 1000px) and (min-width:500px){
+    font-size: 3em; 
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size:2em;
+  }
 }
 
 @mixin subtitle {
-  font-size:3.8em;
+  font-size:3.2em;
   font-family: 'Great Vibes', cursive;
   text-align: center;
+
+  @media screen and (max-width: 1000px) and (min-width:500px){
+    font-size: 3em; 
+  }
+
+  @media screen and (max-width:500px) {
+    font-size: 2em;
+  }
 }
+
+
+/*  Splash Section */
 
 .splash {
   .first {
@@ -34,13 +56,13 @@ $title-red: rgb(230,41,42);
   .second {
     @include title;
     color: $title-grey;
-    font-size: 5.5em;
+    font-size: 4.5em;
   }
 
   .third {
     @include title;
     color: $title-red;
-    font-size:6em;
+    font-size:5em;
   }
 
   .fourth {
@@ -49,33 +71,6 @@ $title-red: rgb(230,41,42);
     font-size:4em;
   }
 
-  .heart-wrapper {
-    padding-top:1em;
-  }
-
-  .glyphicon-heart {
-    font-size: 4.5em;
-    color:$title-red;
-    text-align: center;
-    width: 100%;  
-  }
-
-  .glyphicon-heart::after{
-      position: absolute;
-      top: 40%;
-      height: 2px;
-      background: #888989;
-      content: "";
-      width: 100%;
-      display: block;
-      z-index: -1000;
-  }
-
-  .glyphicon-heart::before {
-    background: white;
-    padding-left: .5em;
-    padding-right: .5em;
-  }
 
   .subtitle {
     @include subtitle;
@@ -88,39 +83,108 @@ $title-red: rgb(230,41,42);
     color:$title-grey; 
   }
 
-  .glyphicon-chevron-down {
-    font-size: 4em;
-    color: $title-red;
-    text-align: center;
+}
+
+/* CHEVRON*/
+.heart-wrapper {
+  padding-top:1em;
+}
+
+.glyphicon-heart {
+  color:$title-red;
+  text-align: center;
+  width: 100%;  
+}
+
+.glyphicon-heart::after{
+    position: absolute;
+    top: 40%;
+    height: 2px;
+    background: #888989;
+    content: "";
+    width: 100%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
+    z-index: -1000;
+}
+
+.glyphicon-heart::before {
+  font-size:4.5em;
+  background: white;
+  padding-left: .5em;
+  padding-right: .5em;
+
+  @media screen and (max-width: 1000px) and (min-width:500px){
+    font-size: 3em; 
+  }
+
+  @media screen and (max-width: 500px){
+    font-size: 2em;
   }
 }
 
+.glyphicon-chevron-down {
+  font-size: 4em;
+  color: $title-red;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
 
-/* Details Section */
-.title-details {
-  @include title;
+  @media screen and (max-width: 1000px) and (min-width:500px){
+    font-size: 3em; 
+  }
+
+  @media screen and (max-width: 500px){
+    font-size: 2em;
+  }
 }
 
+/* Details Section */
+.rsvp,
 .details {
   .title {
     @include title;
+    font-size:2.7em;
   }
 
   .subtitle {
     @include title;
-    font-size: 3em;
+    font-size: 2.5em;
     text-align: left;
+
+    @media screen and (max-width: 1000px) and (min-width:500px){
+      font-size: 2em; 
+    }
+
+    @media screen and (max-width: 500px){
+      font-size: 1.5em;
+    }
   }
 
   .content {
     @include title;
     color:$title-grey;
-    font-size:2em;
+    font-size:1.8em;
     font-weight: normal;
     text-align: left;
+
+    @media screen and (max-width: 1000px) and (min-width:500px){
+      font-size: 1.2em; 
+    }
+
+    @media screen and (max-width: 500px){
+      font-size: 1em;
+    }
+  }
+
+  .extra-content {
+    font-size: .8em;
+    font-weight: normal;
+    text-align: left;
+  }
+
+  a {
+    color:$title-red !important;
   }
 }
